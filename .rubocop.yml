@@ -1,0 +1,153 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0
+  DisplayCopNames: true
+  NewCops: disable
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - vendor/**/*
+    - tmp/**/*
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: true
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/ImplicitSubject:
+  Enabled: false
+
+RSpec/RepeatedDescription:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/FilePath:
+  Exclude:
+    - spec/graphql/**/*
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - spec/policies/**/*
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/LeadingSubject:
+  Enabled: false
+
+Capybara/FeatureMethods:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/SymbolArray:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+  SupportedStyles:
+    - compact
+    - expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringMethods:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+  SupportedStyles:
+    - with_first_parameter
+    - with_fixed_indentation
+
+Layout/LineLength:
+  Max: 120
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+  SupportedStylesAlignWith:
+    - keyword
+    - variable
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/HashAlignment:
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Metrics/BlockLength:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Naming/PredicateName:
+  Enabled: false
