@@ -5,6 +5,18 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run linters
+        run: bin/lint
+
   test:
     runs-on: ubuntu-latest
     services:
@@ -23,22 +35,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Set up database schema
         run: bin/rails db:schema:load
       - name: Run tests
         run: bin/rspec
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf
-        with:
-          bundler-cache: true
-      - name: Run linters
-        run: bin/lint
