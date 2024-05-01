@@ -56,6 +56,7 @@ RSpec/LetSetup:
 RSpec/EmptyExampleGroup:
   Exclude:
     - spec/policies/**/*
+    - spec/requests/api/v1/*
 
 RSpec/MultipleMemoizedHelpers:
   Enabled: false

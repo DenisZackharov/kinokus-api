@@ -1,0 +1,34 @@
+---
+openapi: 3.0.1
+info:
+  title: Documentation API V1
+  version: v1
+paths:
+  "/api/v1/movies":
+    get:
+      summary: list movies
+      tags:
+      - Movies
+      responses:
+        '200':
+          description: successful
+  "/api/v1/movies/{id}":
+    get:
+      summary: show movie
+      tags:
+      - Movies
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: movie found
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000

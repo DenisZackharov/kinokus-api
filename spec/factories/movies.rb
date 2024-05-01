@@ -11,8 +11,11 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
-class Movie < ApplicationRecord
-  validates :name, presence: true
-
-  has_one_attached :poster
+FactoryBot.define do
+  factory :movie do
+    name { Faker::Movie.title }
+    annotation { Faker::Lorem.sentence }
+    description { Faker::Lorem.sentence }
+    duration_in_minutes { rand(100..3000) }
+  end
 end
