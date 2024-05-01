@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+
+bin/rubocop --parallel
+bin/brakeman -q -w2
+bin/bundler-audit --update
+bin/ruby-audit check
