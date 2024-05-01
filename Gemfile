@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 
-ruby "3.3.0"
+ruby file: ".ruby-version"
 
 gem "bootsnap", require: false
 gem "jsonapi-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
-gem "rails", "~> 7.1.2"
+gem "rails", "~> 7.1.3.2"
 gem "seedbank"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
@@ -27,4 +27,7 @@ end
 
 group :development do
   gem "annotate"
+  gem "brakeman"
+  gem "bundler-audit"
+  gem "ruby_audit"
 end
