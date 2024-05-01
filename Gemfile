@@ -15,6 +15,9 @@ gem "rswag-ui"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "pry"
   gem "rspec-rails"
   gem "rswag-specs"
   gem "rubocop"
@@ -23,4 +26,5 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotate"
 end

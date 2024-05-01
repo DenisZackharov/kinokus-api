@@ -1,35 +1,33 @@
 require "swagger_helper"
 
-RSpec.describe "api/v1/movies", type: :request do
+describe "api/v1/movies", type: :request do
   path "/api/v1/movies" do
-    get("list movies") do
-      response(200, "successful") do
-        after do |example|
-          example.metadata[:response][:content] = {
-            "application/json" => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+    get "list movies" do
+      tags "Movies"
+      produces "application/json"
 
-        run_test!
+      let!(:first_movie) { create :movie }
+      let!(:second_movie) { create :movie }
+
+      response 200, "successful" do
+        run_test! do |response|
+          body = JSON.parse(response.body)
+          expect(body["data"].count).to eq(2)
+        end
       end
     end
   end
 
   path "/api/v1/movies/{id}" do
-    parameter name: "id", in: :path, type: :integer, description: "id"
+    get "show movie" do
+      tags "Movies"
+      parameter name: "id", in: :path, type: :integer, description: "id"
+      produces "application/json"
 
-    get("show movie") do
-      response(200, "successful") do
-        let(:id) { 123 }
-        after do |example|
-          example.metadata[:response][:content] = {
-            "application/json" => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+      let!(:movie) { create :movie, name: "Lord of the rings" }
+
+      response 200, "movie found" do
+        let(:id) { movie.id }
 
         run_test!
       end
