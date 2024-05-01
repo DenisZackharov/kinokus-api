@@ -1,6 +1,7 @@
 require:
   - rubocop-rspec
   - rubocop-rails
+  - rubocop-factory_bot
 
 AllCops:
   TargetRubyVersion: 3.0
@@ -62,9 +63,6 @@ RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
 RSpec/LeadingSubject:
-  Enabled: false
-
-Capybara/FeatureMethods:
   Enabled: false
 
 Style/AndOr:

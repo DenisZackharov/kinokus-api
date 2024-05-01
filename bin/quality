@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+set -e
+
+echo "===== Rubocop ====="
+bin/rubocop
+
+echo "\n===== Brakeman ====="
+bin/brakeman --quiet --skip-libs --exit-on-warn --no-pager
+
+echo "\n===== Audit ====="
+bin/bundle-audit update
+bin/bundle-audit
+bin/ruby-audit check
+
+
