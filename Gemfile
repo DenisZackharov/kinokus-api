@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
+gem "aws-sdk-s3"
 gem "bootsnap", require: false
 gem "dotenv"
 gem "jsonapi-rails"
