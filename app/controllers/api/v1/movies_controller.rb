@@ -2,7 +2,7 @@ module Api
   module V1
     class MoviesController < ApplicationController
       def index
-        @movies = Movie.includes(:poster_attachment)
+        @movies = Movie.with_attached_poster
 
         render jsonapi: @movies
       end
