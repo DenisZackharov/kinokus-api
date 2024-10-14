@@ -31,6 +31,3 @@ COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 COPY --from=builder /kinokus-api/ /kinokus-api/
 
 WORKDIR /kinokus-api/
-
-EXPOSE 3000
-ENTRYPOINT [ "bin/docker-entrypoint" ]
