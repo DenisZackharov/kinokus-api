@@ -23,6 +23,7 @@ FROM ruby:3.3.1-alpine as final
 RUN apk add --update --no-cache \
     build-base \
     postgresql-client \
+    postgresql-dev \
     tzdata \
     file \
     git
