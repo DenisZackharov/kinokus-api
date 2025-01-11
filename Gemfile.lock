@@ -99,6 +99,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.2.0)
     bigdecimal (3.1.6)
+    blueprinter (1.1.2)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     brakeman (6.1.2)
@@ -139,17 +140,6 @@ GEM
     json (2.7.1)
     json-schema (4.1.1)
       addressable (>= 2.8)
-    jsonapi-deserializable (0.2.0)
-    jsonapi-parser (0.1.1)
-    jsonapi-rails (0.4.1)
-      jsonapi-parser (~> 0.1.0)
-      jsonapi-rb (~> 0.5.0)
-    jsonapi-rb (0.5.0)
-      jsonapi-deserializable (~> 0.2.0)
-      jsonapi-serializable (~> 0.3.0)
-    jsonapi-renderer (0.2.2)
-    jsonapi-serializable (0.3.1)
-      jsonapi-renderer (~> 0.2.0)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -321,6 +311,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   aws-sdk-s3
+  blueprinter
   bootsnap
   brakeman
   bundler-audit
@@ -328,7 +319,6 @@ DEPENDENCIES
   dotenv
   factory_bot_rails
   faker
-  jsonapi-rails
   pg (~> 1.1)
   pry
   puma (>= 5.0)
