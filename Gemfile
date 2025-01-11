@@ -3,13 +3,13 @@ source "https://rubygems.org"
 ruby file: ".ruby-version"
 
 gem "aws-sdk-s3"
+gem "blueprinter"
 gem "bootsnap", require: false
 gem "dotenv"
-gem "jsonapi-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "rack-cors"
-gem "rails", "~> 7.1.3.2"
+gem "rails", "~> 8.0.0.1"
 gem "seedbank"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
